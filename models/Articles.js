@@ -2,16 +2,22 @@ const { Schema, model } = require("mongoose");
 
 const ArticleSchema = Schema({
 	title: {
-        type: String,
-        require: true
-    },
+		type: String,
+		require: true,
+	},
 	content: {
-        type: String,
-        require: true
-    },
+		type: String,
+		require: true,
+	},
 	date: {
-        type: Date,
-        require: true
-    },
-	image: String,
+		type: Date,
+		default: Date.now,
+	},
+	image: {
+		type: String,
+		default: "defauld.png",
+	},
 });
+
+module.exports = model("Article", ArticleSchema);
+//articles
